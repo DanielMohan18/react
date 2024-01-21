@@ -1,41 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Heading = () => {
-    return(
-      <div className="header">
-        <div className="logo-container">
-            <img className="logo" src="https://cdn.dribbble.com/userupload/10790076/file/original-ff791b20101e6551b2ade568108f5dba.png?resize=400x300"/>
-        </div>
-        <div className="nav-items">
-            <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
-                <li>Cart</li>
-            </ul>
-        </div>
-      </div>
-    );
-};
-
-const ResCards = (props) => {
-    const{restData}=props
-    return(
-        <div className="res-cards">
-            <img className="res-logo" src={restData.img}/>
-            <h3>{restData.name}</h3>
-            <span>{restData.cusine}</span>
-            <div className="btom">
-            <h4 className="box"><i className="ri-star-fill"></i>{restData.rating}</h4>
-            <ul>
-                <li>{restData.time}</li>
-                <li> {restData.num} FOR TWO </li>
-            </ul>
-            </div>
-        </div>
-    );
-};
 const dataObj =[{
     name:"KFC",
     cusine:"Fried chicken,Burgers,Popcorn",
@@ -94,29 +56,4 @@ const dataObj =[{
     img:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/85ccae4e3576f9330af102c46ca85395"
 }];
 
-const Bodycom = () => {
-    return(
-        <div className="body">
-            <div className="search">
-                Search
-            </div>
-            <div className="res-container">
-                {
-                    dataObj.map((res)=><ResCards key={res.id} restData={res}/>)
-                }
-            </div>
-        </div>
-    );
-};
-
-const Applayout = () => {
-    return (
-       <div className="app">
-        <Heading /> 
-        <Bodycom />  
-       </div>
-    );
-};
-
-const root=ReactDOM.createRoot(document.getElementById("hell"));
-root.render(<Applayout />);
+export default dataObj;
